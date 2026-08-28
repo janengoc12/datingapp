@@ -10,20 +10,53 @@
   <header>
     <h1>💕 Couple Memories</h1>
     <p>Save the moments that matter to you both.</p>
+    <div id="user-bar" hidden>
+      <img id="user-avatar" alt="" />
+      <span id="user-name"></span>
+      <button id="sign-out-btn">Sign out</button>
+    </div>
   </header>
 
   <main>
-    <form id="memory-form">
-      <input type="text" id="title" placeholder="Title (e.g. Our first hike)" required />
-      <input type="date" id="date" required />
-      <textarea id="note" placeholder="A note about this memory..."></textarea>
-      <input type="url" id="photoUrl" placeholder="Photo URL (optional)" />
-      <button type="submit">Add Memory</button>
-    </form>
+    <section id="signed-out-view">
+      <button id="google-sign-in-btn">Sign in with Google</button>
+    </section>
 
-    <ul id="memory-list"></ul>
+    <section id="pairing-view" hidden>
+      <h2>Pair with your partner</h2>
+      <p>Share an invite code with your partner, or enter the one they sent you.</p>
+
+      <div class="pairing-card">
+        <h3>Send an invite</h3>
+        <button id="create-invite-btn">Generate invite code</button>
+        <p id="invite-code-display"></p>
+      </div>
+
+      <div class="pairing-card">
+        <h3>Join with a code</h3>
+        <form id="redeem-invite-form">
+          <input type="text" id="invite-code-input" placeholder="Enter 6-character code" maxlength="6" required />
+          <button type="submit">Join</button>
+        </form>
+        <p id="redeem-error" class="error"></p>
+      </div>
+    </section>
+
+    <section id="memories-view" hidden>
+      <form id="memory-form">
+        <input type="text" id="title" placeholder="Title (e.g. Our first hike)" required />
+        <input type="date" id="date" required />
+        <textarea id="note" placeholder="A note about this memory..."></textarea>
+        <input type="url" id="photoUrl" placeholder="Photo URL (optional)" />
+        <button type="submit">Add Memory</button>
+      </form>
+
+      <ul id="memory-list"></ul>
+    </section>
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="config.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
