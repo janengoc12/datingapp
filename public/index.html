@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Couple Memories</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>💕 Couple Memories</h1>
+    <p>Save the moments that matter to you both.</p>
+  </header>
+
+  <main>
+    <form id="memory-form">
+      <input type="text" id="title" placeholder="Title (e.g. Our first hike)" required />
+      <input type="date" id="date" required />
+      <textarea id="note" placeholder="A note about this memory..."></textarea>
+      <input type="url" id="photoUrl" placeholder="Photo URL (optional)" />
+      <button type="submit">Add Memory</button>
+    </form>
+
+    <ul id="memory-list"></ul>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
