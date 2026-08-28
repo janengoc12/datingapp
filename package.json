@@ -1,0 +1,13 @@
+{
+  "name": "couple-memories-app",
+  "version": "1.0.0",
+  "description": "A simple app for couples to save and browse shared memories",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
